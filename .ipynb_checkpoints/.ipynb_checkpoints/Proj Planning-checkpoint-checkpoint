@@ -1,0 +1,154 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "db60c60b-585f-444f-bea1-b828dd342b6b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# DSCI Project Planning Stage (Individual)\n",
+    "### Amanda Ren\n",
+    "\n",
+    "**Broad Question**\n",
+    "- Which time windows are most likely to have large numbers of simultaneous players?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "4b3149cc-57fe-4245-a0bb-3035c09e0bbb",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "unterminated string literal (detected at line 7) (2162791618.py, line 7)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;36m  Cell \u001b[0;32mIn[1], line 7\u001b[0;36m\u001b[0m\n\u001b[0;31m    - name: Character, player's first name\u001b[0m\n\u001b[0m                             ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m unterminated string literal (detected at line 7)\n"
+     ]
+    }
+   ],
+   "source": [
+    "## 1. Data Description\n",
+    "- **Players.csv**: Information about each player.\n",
+    "  - experience: Categorical, character level, beginner, amateur, regular, veteran, pro.\n",
+    "  - subscribe: Logical, whether the player is subscribed to the newsletter\n",
+    "  - hashedEmail: Character, what is used to identify the player.\n",
+    "  - played_hours: Numeric, total hours played\n",
+    "  - name: Character, player's first name\n",
+    "  - gender: Categorical, gender identity\n",
+    "  - age: Numeric, players age(missing some values)   \n",
+    "- **Sessions.csv**: One row per session.\n",
+    "  - session_id: Character, session identifier.\n",
+    "  - player_id: Character, links to players.csv.\n",
+    "  - start_time & end_time: Datetime, the time sessions began/ended.\n",
+    "  - duration_minutes: Numeric, duration of session.\n",
+    "  - blocks_placed & blocks_destroyed: Numeric, number of blocks placed/destroyed.\n",
+    "  - items_collected: Numeric, items gathered"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "51fb582d-2f6b-42aa-aa22-f59740d908fe",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'library' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[2], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m \u001b[43mlibrary\u001b[49m(tidyverse)\n\u001b[1;32m      2\u001b[0m library(lubridate)\n\u001b[1;32m      3\u001b[0m library(GGally)\n",
+      "\u001b[0;31mNameError\u001b[0m: name 'library' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "library(tidyverse)\n",
+    "library(lubridate)\n",
+    "library(GGally)\n",
+    "library(scales)\n",
+    "\n",
+    "set.seed(2000)\n",
+    "\n",
+    "players <- read_csv(\"players.csv\")\n",
+    "sessions <- read_csv(\"sessions.csv\")\n",
+    "\n",
+    "players\n",
+    "sessions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3746c643-3eb3-4d26-8e4e-068264cdaa26",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "da69334d-810f-4b6e-a248-49abf913df3a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "658f517d-4174-4fb2-84c7-d232bca9b21d",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a8106909-08cf-4481-93ee-04c68a4d5ef7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "43eed2e6-4288-4bbb-9c6a-0d050ea2c2ea",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a19e940a-da09-409f-b38b-9f405ab2bbdd",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
