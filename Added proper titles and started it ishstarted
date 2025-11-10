@@ -1,0 +1,60 @@
+# DSCI Project Planning Stage (Individual)
+### Amanda Ren
+
+# One-page planning proposal 
+**Broad Question**
+
+library(tidyverse)
+library(lubridate)
+library(GGally)
+library(scales)
+
+set.seed(2000)
+
+players <- read_csv("players.csv")
+sessions <- read_csv("sessions.csv")
+
+players
+
+## 1. Data Description
+- **players.csv**: Information about each player.
+  - experience: Categorical, character level, beginner, amateur, regular, veteran, pro.
+  - subscribe: Logical, whether the player is subscribed to the newsletter
+  - hashedEmail: Character, what is used to identify the player.
+  - played_hours: Numeric, total hours played
+  - name: Character, player's first name
+  - gender: Categorical, gender identity
+  - age: Numeric, players age(missing some values)
+- **sessions.csv**: One row per session.
+  - hashedEmail: What is used to identify the player
+  - start_time, end_time: When they started playing and when each session ended
+  - original_start_time, original_end_time
+  
+**Number of observations** printed in the code cell above
+
+**Potential issues** time formatting(DD/MM/YYYY), sessions that go on for multiple hours, missing data for some players or sessions, outliers in sessions (players who are no longer playing but are still logged in), and different time zones. 
+
+## Means for numeric variables in players.csv (rounded to 2 dp)
+Now we will compute the mean of each numeric column in "players.csv" and present it in a small table. 
+
+players <- read_csv("players.csv")
+
+numeric_cols <- players
+    select(where(is.numeric)) |>
+    summarise(across(everything(), ~ round(mean(.x, na.rm = TRUE), 2))) |>
+    pivot_longer(everything(), names_to = "variable", values_to = "mean_value")
+players
+
+## Minimal wrangling 
+- Parse start_time and end_time using dmy_hm(), this way dates with be formatted DD/MM/YY H:M.
+- Expanding sessions to every hour they overlap (so a 1.5-hour session will count in both hours)
+- Create hourly bins and compute the occurring players per hourly bin.
+- Do not drop unnecessary columns; perform only the steps required for EDA. 
+
+## 2. Questions
+
+## 3. Exploratory Data Analysis and Visualization
+
+## 4. Methods and Plan
+
+## 5 Github Repository
