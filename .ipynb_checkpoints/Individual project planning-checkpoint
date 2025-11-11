@@ -4044,12 +4044,35 @@
    "id": "6277ff59-6c75-4898-80ac-6ea30cfccbae",
    "metadata": {},
    "source": [
-    "## 4. Methods and Plan"
+    "## 4. Methods and Plan\n",
+    "**Proposed method:** I plan to use a linear regression model to examine how player characteristics (experience, age, total hours) predict their performance/engagement in the game. Specifically, it will help determine whether players who spend more time playing achieve higher outcomes/experience levels. \n",
+    "****\n",
+    "**Why this method is appropriate:** Linear regression is suitable since both the predictor variables (played hours, age) and the outcome variables (performance/experience level) are numeric/ordered. This method helps me identify the direction of the relationships between these variables. \n",
+    "****\n",
+    "**Assumptions required:** To use linear regression properly, these assumptions must be in place:\n",
+    "1. The relationship between predictors(played hours, age and the linear outcome)\n",
+    "2. Each player's data should be independent.\n",
+    "3. The errors should have equal variances across all the fitted values\n",
+    "4. The errors should follow a somewhat normal distribution.\n",
+    "- I will check these assumptions using plots before submitting the final model.\n",
+    "****\n",
+    "**Potential limitations/weaknesses:** \n",
+    "- Player data may contain outliers, e.g. individuals with extreme playtime or missing information\n",
+    "- Some variables may not be entirely numeric, making interpretation hard if categories are included.\n",
+    "- Unmeasured factors(skill level, internet connection) may also affect performance, but are not included in the datasets.\n",
+    "****\n",
+    "**Model comparison and selection:** I will start with a basic linear model, then test multiple models, adding/removing predictors like age or gender. Next, I will compare how well they make sense using plots and checking if the line of best fit visually matches the data. \n",
+    "****\n",
+    "**Data processing plan:** \n",
+    "- Clean the data by removing missing & invalid values.\n",
+    "- Make sure all the numeric columns are in the right format.\n",
+    "- Split the data into a training set (70%) to build the model and a testing set (30%) to check if it works.\n",
+    "- The split will happen after the cleaning step, so no data will leak between sets."
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "42457a77-ebc5-4098-9d44-602e2e468d94",
+   "id": "35759534-319b-4f76-b16d-937e9c3f0d06",
    "metadata": {},
    "source": [
     "## 5. Github Repository"
@@ -4058,7 +4081,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "d93f1762-7970-4f11-ac62-588d8b4e83e9",
+   "id": "c362d074-241c-4edb-b382-08b59379429b",
    "metadata": {},
    "outputs": [],
    "source": []
